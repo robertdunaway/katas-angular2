@@ -5,7 +5,8 @@ Use standards and guidelines as references for katas.
 Use interview questions for katas.
 
 
-
+Building Web applications with TypeScript and AngularJS in Visual Studio 2015
+http://osconqsc2015.azurewebsites.net/qsccontent/TypeScript/TypeScript.html 
 
 
 
