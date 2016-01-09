@@ -9,6 +9,10 @@ Building Web applications with TypeScript and AngularJS in Visual Studio 2015
 http://osconqsc2015.azurewebsites.net/qsccontent/TypeScript/TypeScript.html 
 
 
+https://toddmotto.com/minimal-angular-module-syntax-approach-using-an-iife/
+
+
+
 
 
 
