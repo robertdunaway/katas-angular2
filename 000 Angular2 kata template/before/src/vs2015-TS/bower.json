@@ -19,13 +19,13 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.4",
+    "jquery": "~2.2.0",
     "angular": "~1.4.8",
     "bootstrap": "~3.3.6",
-    "normalize-css": "normalize.css#~3.0.3",
-    "font-awesome": "fontawesome#~4.5.0",
+    "normalize-css": "~3.0.3",
+    "font-awesome": "~4.5.0",
     "angular-ui-router": "~0.2.15",
-    "angular-bootstrap": "~0.14.3",
-    "lodash": "~3.10.1"
+    "angular-bootstrap": "~1.0.3",
+    "lodash": "~4.0.0"
   }
 }
