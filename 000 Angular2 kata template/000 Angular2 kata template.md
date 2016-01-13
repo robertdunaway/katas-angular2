@@ -3,6 +3,7 @@ title: 000 Angular - ]
 
 tags: 
 - AngularJS
+- Angular2
 - Gulp
 - Bower
 - npm
@@ -16,12 +17,12 @@ tags:
 
 ###http://robertdunaway.github.io
 
-##[TypeScript code kata list](http://mycodekatas.github.io/typescript.html)
+##[Angular2 code kata list](http://mycodekatas.github.io/angular2.html)
 ##[All code kata lists](http://mycodekatas.github.io/)
 
- <img src="https://raw.githubusercontent.com/robertdunaway/katas-typescript/master/katas-TS-logo.png" alt="Smiley face" height="200" width="200"> 
+ <img src="https://raw.githubusercontent.com/robertdunaway/katas-angular2/master/katas-Angular2-logo.png" alt="Smiley face" height="200" width="200"> 
 
-# [000.00 TypeScript - ]
+# [000 Angular2 - ]
 
 ## Duration
 [minutes]
@@ -30,10 +31,10 @@ tags:
 [...]
 
 ### For more information 
-BING/GOOGLE: “TypeScript ”
+BING/GOOGLE: “Angular2 ”
 
 ## Instructions
-Get tutorial folder or the entire katas-typescript repo.
+Get tutorial folder or the entire katas-angular2 repo.
 Open the `[before/*.sln]` file and execute the kata.
 Feel free to execute this kata multiple times because repetition creates motor memory.
 
@@ -68,4 +69,4 @@ Take a few minutes and imagine more examples.
 
 <br>
 
- <img src="https://raw.githubusercontent.com/robertdunaway/katas-typescript/master/katas-TS-logo.png" alt="Smiley face" height="200" width="200"> 
+ <img src="https://raw.githubusercontent.com/robertdunaway/katas-angular2/master/katas-Angular2-logo.png" alt="Smiley face" height="200" width="200"> 
