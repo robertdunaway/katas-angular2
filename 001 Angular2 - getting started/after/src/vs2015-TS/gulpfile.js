@@ -86,32 +86,36 @@ gulp.task('tsd', function () {
 });
 
 gulp.task('libs', function () {
-    return gulp.src(['bower_components/**//bootstrap/dist/js/bootstrap.min.js'
-                    , 'bower_components/**//normalize-css/normalize.css'
+    return gulp.src(['bower_components/**//normalize-css/normalize.css'
                     , 'bower_components/**//font-awesome/css/font-awesome.min.css'
                     , 'bower_components/**/font-awesome/fonts/*.*'
                     , 'bower_components/**//jquery/dist/jquery.min.js'
-                    , 'bower_components/**//angular/*.min.js'
-                    , 'bower_components/**//angular-ui-router/release/angular-ui-router.min.js'
-                    , 'bower_components/**//angular-bootstrap/ui-bootstrap-tpls.min.js'
-                    , 'bower_components/**//lodash/lodash.min.js'])
+                    , 'bower_components/**//lodash/lodash.min.js'
+                    
+                    // for angular2
+                    , 'node_modules/**//es6-shim/es6-shim.min.js'
+                    , 'node_modules/**//angular2/bundles/angular2-polyfills.min.js'
+                    , 'node_modules/**//systemjs/dist/system.src.js'
+                    , 'node_modules/**//rxjs/bundles/rx.min.js'
+                    , 'node_modules/**//angular2/bundles/angular2.min.js'
+                    
+    ])
       .pipe(plumber({
           errorHandler: onError
       }))
-      //.pipe(concat('libs.js'))
-      .pipe(gulp.dest('wwwroot/lib/bower/./'));
+      .pipe(gulp.dest('wwwroot/lib/./'));
 });
 
 
 
 
 
- 
+
 // ----------------------------------------------------------------
 // Default Task
 // ----------------------------------------------------------------
 gulp.task('default', function () {
-    runSequence('clean-wwwroot', 'copy-to-wwwroot',
+    runSequence('clean-wwwroot', 'copy-to-wwwroot', 'libs',
                 ['minifyhtml', 'tscompile', 'tslint']
                 , 'watch'
                 );
