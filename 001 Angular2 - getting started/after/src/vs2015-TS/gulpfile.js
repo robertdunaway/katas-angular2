@@ -1,4 +1,4 @@
-﻿/// <binding ProjectOpened='default, tsd' />
+﻿/// <binding ProjectOpened='tsd, default' />
 var onError = function (err) {
     console.log(err);
 };
@@ -17,7 +17,10 @@ var gulp = require('gulp')
     , watch = require('gulp-watch')
     , uglify = require('gulp-uglify')
     , tsd = require('gulp-tsd')
+    , tsProject = ts.createProject('tsconfig.json')
 ;
+
+
 
 gulp.task('clean-wwwroot', function () {
     return gulp.src('wwwroot', { read: false })
@@ -28,7 +31,7 @@ gulp.task('clean-wwwroot', function () {
 });
 
 gulp.task('copy-to-wwwroot', function () {
-    return gulp.src('src/**/*')
+    return gulp.src(['src/**/*'])
       .pipe(plumber({
           errorHandler: onError
       }))
@@ -56,11 +59,9 @@ gulp.task('tscompile', function () {
           errorHandler: onError
       }))
     .pipe(sourcemaps.init())
-    .pipe(ts({
-        target: 'ES5',
-        declarationFiles: false,
-        noExternalResolve: true
-    }))
+
+    .pipe(ts(tsProject))
+
     .pipe(rename({ extname: '.js' }))
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))

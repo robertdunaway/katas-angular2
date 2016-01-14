@@ -19,7 +19,6 @@
     "merge": "^1.2.0",
     "reporters": "0.0.4",
     "run-sequence": "^1.1.5",
-    "typescript": "^1.7.5",
     
     "angular2": "2.0.0-beta.0",
     "systemjs": "0.19.6",
