@@ -1,7 +1,10 @@
 ﻿import { bootstrap } from 'angular2/platform/browser';
 
 
-//import {extend} from 'jquery'; 
+//import * as $ from 'jquery';
+//import $ from 'jquery';
+
+import  {extend } from 'jquery'; 
 // TS2307
 
 
