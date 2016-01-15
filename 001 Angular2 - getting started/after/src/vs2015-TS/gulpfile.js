@@ -40,7 +40,7 @@ gulp.task('copy-to-wwwroot', function () {
 });
 
 gulp.task('minifyhtml', function () {
-    return gulp.src(['wwwroot/**/*.html', '!/**/*.min.html', '!wwwroot/core/lib/**/*'])
+    return gulp.src(['wwwroot/**/*.html', '!/**/*.min.html', '!wwwroot/lib/**/*'])
       .pipe(plumber({
           errorHandler: onError
       }))
@@ -54,7 +54,7 @@ gulp.task('minifyhtml', function () {
 });
 
 gulp.task('tscompile', function () {
-    return gulp.src(['./wwwroot/**/*.ts', '!wwwroot/core/lib/**/*.*', '!wwwroot/core/css/**/*.*'])
+    return gulp.src(['./wwwroot/**/*.ts', '!wwwroot/lib/**/*.*', '!wwwroot/css/**/*.*'])
       .pipe(plumber({
           errorHandler: onError
       }))
@@ -70,7 +70,7 @@ gulp.task('tscompile', function () {
 
 
 gulp.task('tslint', function () {
-    return gulp.src(['./wwwroot/**/*.ts', '!wwwroot/core/lib/**/*.*', '!wwwroot/core/css/**/*.*'])
+    return gulp.src(['./wwwroot/**/*.ts', '!wwwroot/lib/**/*.*', '!wwwroot/css/**/*.*'])
         .pipe(plumber({
             errorHandler: onError
         }))
@@ -99,6 +99,7 @@ gulp.task('libs', function () {
                     , 'node_modules/**//systemjs/dist/system.src.js'
                     , 'node_modules/**//rxjs/bundles/rx.min.js'
                     , 'node_modules/**//angular2/bundles/angular2.min.js'
+                    , 'node_modules/**//angular2/bundles/angular2.dev.js'
                     
     ])
       .pipe(plumber({
@@ -134,13 +135,13 @@ gulp.task('watch', function () {
     // ---------------------------------------------------------------
     // Watching TypeScript files
     // ---------------------------------------------------------------
-    gulp.watch(['wwwroot/**/*.ts', '!wwwroot/core/lib/**/*.*', '!wwwroot/core/css/**/*.*'], function () { runSequence('tscompile'); });
+    gulp.watch(['wwwroot/**/*.ts', '!wwwroot/lib/**/*.*', '!wwwroot/css/**/*.*'], function () { runSequence('tscompile'); });
 
     // ---------------------------------------------------------------
     // Watch - Execute linters
     // ---------------------------------------------------------------
-    gulp.watch(['wwwroot/**/*.ts', '!wwwroot/core/lib/**/*.*', '!wwwroot/core/css/**/*.*'], function () { runSequence('tslint'); });
+    gulp.watch(['wwwroot/**/*.ts', '!wwwroot/lib/**/*.*', '!wwwroot/css/**/*.*'], function () { runSequence('tslint'); });
 
-    gulp.watch(['wwwroot/**/*.html', '!wwwroot/**/*.min.html', '!wwwroot/core/lib/**/*'], ['minifyhtml']);
+    gulp.watch(['wwwroot/**/*.html', '!wwwroot/**/*.min.html', '!wwwroot/lib/**/*'], ['minifyhtml']);
 
 });
