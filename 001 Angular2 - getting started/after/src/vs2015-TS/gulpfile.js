@@ -18,6 +18,7 @@ var gulp = require('gulp')
     , uglify = require('gulp-uglify')
     , tsd = require('gulp-tsd')
     , tsProject = ts.createProject('tsconfig.json')
+    , livereload = require('gulp-livereload')
 ;
 
 
@@ -109,6 +110,10 @@ gulp.task('libs', function () {
 });
 
 
+gulp.task('reload', function () {
+    // Change the filepath, when you want to live reload a different page in your project.
+    livereload.reload("./index.min.html");
+});
 
 
 
@@ -126,6 +131,8 @@ gulp.task('default', function () {
 
 gulp.task('watch', function () {
 
+    livereload.listen();
+
     // ---------------------------------------------------------------
     // Watching JS files
     // ---------------------------------------------------------------
@@ -135,13 +142,17 @@ gulp.task('watch', function () {
     // ---------------------------------------------------------------
     // Watching TypeScript files
     // ---------------------------------------------------------------
-    gulp.watch(['wwwroot/**/*.ts', '!wwwroot/lib/**/*.*', '!wwwroot/css/**/*.*'], function () { runSequence('tscompile'); });
+    gulp.watch(['wwwroot/**/*.ts', '!wwwroot/lib/**/*.*', '!wwwroot/css/**/*.*'], function () { runSequence('tscompile', 'reload'); });
 
     // ---------------------------------------------------------------
     // Watch - Execute linters
     // ---------------------------------------------------------------
     gulp.watch(['wwwroot/**/*.ts', '!wwwroot/lib/**/*.*', '!wwwroot/css/**/*.*'], function () { runSequence('tslint'); });
 
-    gulp.watch(['wwwroot/**/*.html', '!wwwroot/**/*.min.html', '!wwwroot/lib/**/*'], ['minifyhtml']);
+    // ---------------------------------------------------------------
+    // Watching HTML files
+    // ---------------------------------------------------------------
+    gulp.watch(['wwwroot/**/*.html', '!wwwroot/**/*.min.html', '!wwwroot/lib/**/*'], function () { runSequence('minifyhtml', 'reload'); });
+
 
 });
