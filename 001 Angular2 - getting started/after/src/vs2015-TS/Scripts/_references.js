@@ -9,5 +9,4 @@
 /// <reference path="../bower_components/jquery/dist/jquery.js" />
 /// <reference path="../bower_components/lodash/lodash.js" />
 /// <reference path="../gulpfile.js" />
-/// <reference path="../wwwroot/app.js" />
 
