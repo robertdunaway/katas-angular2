@@ -1,8 +1,8 @@
 ﻿{
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es5"
-
+    "target": "es5",
+    "experimentalDecorators": true
   },
   "exclude": [
     "bower_components",
@@ -10,13 +10,10 @@
     "wwwroot",
     "typings",
     "bower_components"
-  ],
+  ]
+  ,
   "files": [
     "./typings/angular2/angular2.d.ts",
-
-    "./typings/jquery/jquery.d.ts",
-    "./bower_components/jquery/dist/jquery.js",
-
     "./src/app.ts"
   ]
 }
