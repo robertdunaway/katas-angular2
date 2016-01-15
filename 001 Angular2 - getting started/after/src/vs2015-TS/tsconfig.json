@@ -2,16 +2,9 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
-  "exclude": [
-    "bower_components",
-    "node_modules",
-    "wwwroot",
-    "typings",
-    "bower_components"
-  ]
-  ,
   "files": [
     "./typings/angular2/angular2.d.ts",
     "./src/app.ts"
