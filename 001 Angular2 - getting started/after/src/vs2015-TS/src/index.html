@@ -15,5 +15,19 @@
     <script src="../lib/angular2/bundles/angular2.min.js"></script>
 
     <script src="app.js"></script>
+
+    <script>
+        System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+        System.import('app.js')
+              .then(null, console.error.bind(console));
+    </script>
+
 </body>
 </html>
