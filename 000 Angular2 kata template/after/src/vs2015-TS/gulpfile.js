@@ -1,4 +1,4 @@
-﻿/// <binding ProjectOpened='default, tsd' />
+﻿/// <binding ProjectOpened='tsd, default' />
 var onError = function (err) {
     console.log(err);
 };
@@ -17,7 +17,11 @@ var gulp = require('gulp')
     , watch = require('gulp-watch')
     , uglify = require('gulp-uglify')
     , tsd = require('gulp-tsd')
+    , tsProject = ts.createProject('tsconfig.json')
+    , livereload = require('gulp-livereload')
 ;
+
+
 
 gulp.task('clean-wwwroot', function () {
     return gulp.src('wwwroot', { read: false })
@@ -28,7 +32,7 @@ gulp.task('clean-wwwroot', function () {
 });
 
 gulp.task('copy-to-wwwroot', function () {
-    return gulp.src('src/**/*')
+    return gulp.src(['src/**/*'])
       .pipe(plumber({
           errorHandler: onError
       }))
@@ -37,7 +41,7 @@ gulp.task('copy-to-wwwroot', function () {
 });
 
 gulp.task('minifyhtml', function () {
-    return gulp.src(['wwwroot/**/*.html', '!/**/*.min.html', '!wwwroot/core/lib/**/*'])
+    return gulp.src(['wwwroot/**/*.html', '!/**/*.min.html', '!wwwroot/lib/**/*'])
       .pipe(plumber({
           errorHandler: onError
       }))
@@ -51,16 +55,14 @@ gulp.task('minifyhtml', function () {
 });
 
 gulp.task('tscompile', function () {
-    return gulp.src(['./wwwroot/**/*.ts', '!wwwroot/core/lib/**/*.*', '!wwwroot/core/css/**/*.*'])
+    return gulp.src(['./wwwroot/**/*.ts', '!wwwroot/lib/**/*.*', '!wwwroot/css/**/*.*'])
       .pipe(plumber({
           errorHandler: onError
       }))
     .pipe(sourcemaps.init())
-    .pipe(ts({
-        target: 'ES5',
-        declarationFiles: false,
-        noExternalResolve: true
-    }))
+
+    .pipe(ts(tsProject))
+
     .pipe(rename({ extname: '.js' }))
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
@@ -69,7 +71,7 @@ gulp.task('tscompile', function () {
 
 
 gulp.task('tslint', function () {
-    return gulp.src(['./wwwroot/**/*.ts', '!wwwroot/core/lib/**/*.*', '!wwwroot/core/css/**/*.*'])
+    return gulp.src(['./wwwroot/**/*.ts', '!wwwroot/lib/**/*.*', '!wwwroot/css/**/*.*'])
         .pipe(plumber({
             errorHandler: onError
         }))
@@ -86,32 +88,41 @@ gulp.task('tsd', function () {
 });
 
 gulp.task('libs', function () {
-    return gulp.src(['bower_components/**//bootstrap/dist/js/bootstrap.min.js'
-                    , 'bower_components/**//normalize-css/normalize.css'
+    return gulp.src(['bower_components/**//normalize-css/normalize.css'
                     , 'bower_components/**//font-awesome/css/font-awesome.min.css'
                     , 'bower_components/**/font-awesome/fonts/*.*'
                     , 'bower_components/**//jquery/dist/jquery.min.js'
-                    , 'bower_components/**//angular/*.min.js'
-                    , 'bower_components/**//angular-ui-router/release/angular-ui-router.min.js'
-                    , 'bower_components/**//angular-bootstrap/ui-bootstrap-tpls.min.js'
-                    , 'bower_components/**//lodash/lodash.min.js'])
+                    , 'bower_components/**//lodash/lodash.min.js'
+                    
+                    // for angular2
+                    , 'node_modules/**//es6-shim/es6-shim.min.js'
+                    , 'node_modules/**//angular2/bundles/angular2-polyfills.min.js'
+                    , 'node_modules/**//systemjs/dist/system.src.js'
+                    , 'node_modules/**//rxjs/bundles/rx.min.js'
+                    , 'node_modules/**//angular2/bundles/angular2.min.js'
+                    , 'node_modules/**//angular2/bundles/angular2.dev.js'
+                    
+    ])
       .pipe(plumber({
           errorHandler: onError
       }))
-      //.pipe(concat('libs.js'))
-      .pipe(gulp.dest('wwwroot/lib/bower/./'));
+      .pipe(gulp.dest('wwwroot/lib/./'));
+});
+
+
+gulp.task('reload', function () {
+    // Change the filepath, when you want to live reload a different page in your project.
+    livereload.reload("./index.min.html");
 });
 
 
 
 
-
- 
 // ----------------------------------------------------------------
 // Default Task
 // ----------------------------------------------------------------
 gulp.task('default', function () {
-    runSequence('clean-wwwroot', 'copy-to-wwwroot',
+    runSequence('clean-wwwroot', 'copy-to-wwwroot', 'libs',
                 ['minifyhtml', 'tscompile', 'tslint']
                 , 'watch'
                 );
@@ -119,6 +130,8 @@ gulp.task('default', function () {
 
 
 gulp.task('watch', function () {
+
+    livereload.listen();
 
     // ---------------------------------------------------------------
     // Watching JS files
@@ -129,13 +142,17 @@ gulp.task('watch', function () {
     // ---------------------------------------------------------------
     // Watching TypeScript files
     // ---------------------------------------------------------------
-    gulp.watch(['wwwroot/**/*.ts', '!wwwroot/core/lib/**/*.*', '!wwwroot/core/css/**/*.*'], function () { runSequence('tscompile'); });
+    gulp.watch(['wwwroot/**/*.ts', '!wwwroot/lib/**/*.*', '!wwwroot/css/**/*.*'], function () { runSequence('tscompile', 'reload'); });
 
     // ---------------------------------------------------------------
     // Watch - Execute linters
     // ---------------------------------------------------------------
-    gulp.watch(['wwwroot/**/*.ts', '!wwwroot/core/lib/**/*.*', '!wwwroot/core/css/**/*.*'], function () { runSequence('tslint'); });
+    gulp.watch(['wwwroot/**/*.ts', '!wwwroot/lib/**/*.*', '!wwwroot/css/**/*.*'], function () { runSequence('tslint'); });
 
-    gulp.watch(['wwwroot/**/*.html', '!wwwroot/**/*.min.html', '!wwwroot/core/lib/**/*'], ['minifyhtml']);
+    // ---------------------------------------------------------------
+    // Watching HTML files
+    // ---------------------------------------------------------------
+    gulp.watch(['wwwroot/**/*.html', '!wwwroot/**/*.min.html', '!wwwroot/lib/**/*'], function () { runSequence('minifyhtml', 'reload'); });
+
 
 });
