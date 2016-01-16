@@ -273,22 +273,24 @@ Visual Studio 2015, by default, serves pages out of the `wwwroot` folder.  This 
 Our source code will be in the `src` folder.
 The Gulp file performs the following tasks and in this order.
 
+ - **clean-wwwroot** – Clean out the `wwwroot` folder.  This gives us a clean slate.
+ - **copy-to-wwwroot** – All the code from the `src` folder is copied to the `wwwroot` folder.
+ - **libs** – copies all library files, we need at run-time, to the libs folder in `wwwroot`. 
+ - **minifyhtml** – optimizes any html file in `wwwroot` folder.
+ - **tscompile** – transpiles all TypeScript files down to JavaScript and provides a map allowing us to use TypeScript for debugging in the browser.
+ - **tslint** – provides TypeScript guidance.
+ - **watch** – provides a group of file watchers.  When changes occur the files are re-optimized and put in `wwwroot`.
+ - reload – provides live reload capabilities.
+  - NOTE: To get live reload working you must install the Chrome addin for livereload.  This feature only works in Chrome.  
+  - https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en
+
+<br>
+
+When source files are changed they are copied to the wwwroot folder and optimized then the browser is refreshed without you doing anything more than saving the file.  All of this happens quickly.
+<br>
+You should have a pretty good understanding of how this solution works.  It’s a good starting point for any project so feel free to copy/paste the solution and start building your own applications.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-##Next
-Take a few minutes and imagine more examples. 
 
 <br>
 
