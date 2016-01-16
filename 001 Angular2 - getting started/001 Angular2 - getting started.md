@@ -118,7 +118,7 @@ We added the following to our Gulp file so the libraries can be copied to `wwwro
 
 <br>
 
-```javascript
+```typescript
 // for angular2
  , 'node_modules/**//es6-shim/es6-shim.min.js'
  , 'node_modules/**//angular2/bundles/angular2-polyfills.min.js'
