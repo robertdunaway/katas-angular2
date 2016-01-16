@@ -32,6 +32,7 @@ This kata is more an explanation than a kata.   You will learn the anatomy of th
 
 ### For more information 
 BING/GOOGLE: “Angular2 Getting Started”
+
 Read eBook: https://www.ng-book.com/2/
 
 
