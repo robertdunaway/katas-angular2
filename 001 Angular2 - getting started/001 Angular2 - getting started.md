@@ -42,10 +42,8 @@ Open the `[before/*.sln]` file and execute the kata.
 Feel free to execute this kata multiple times because repetition creates motor memory.
 
 ## Github
- - Before (start kata with this)
-  - https://github.com/robertdunaway/katas-angular2/tree/master/001%20Angular2%20-%20getting%20started/before
- - After
-  - https://github.com/robertdunaway/katas-angular2/tree/master/001%20Angular2%20-%20getting%20started/after
+
+ - https://github.com/robertdunaway/katas-angular2/tree/master/001%20Angular2%20-%20getting%20started/after
 
 # Kata
 
