@@ -133,7 +133,7 @@ The `lib` task in the `gulpfile.json` file should look like this:
 
 <br>
 
-```
+```typescript
 gulp.task('libs', function () {
     return gulp.src(['bower_components/**//normalize-css/normalize.css'
                     , 'bower_components/**//font-awesome/css/font-awesome.min.css'
@@ -163,7 +163,7 @@ We added references to the new libraries in the index.html file.
 
 <br>
 
-```
+```typescript
 <script src="../lib/es6-shim/es6-shim.min.js"></script>
 <script src="../lib/angular2/bundles/angular2-polyfills.min.js"></script>
 <script src="../lib/systemjs/dist/system.src.js"></script>
@@ -185,7 +185,7 @@ If you open the `app.ts` file, you’ll find the following.
 
 <br>
 
-```
+```html
 import { bootstrap } from 'angular2/platform/browser';
 import { Component } from 'angular2/core';
 
