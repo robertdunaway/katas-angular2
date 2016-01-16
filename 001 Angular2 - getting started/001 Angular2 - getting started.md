@@ -58,7 +58,7 @@ We added the following libraries to the package.json file.  These are recommende
 
 <br>
 
-```javascript
+```typescript
     "angular2": "2.0.0-beta.0",
     "systemjs": "0.19.6",
     "es6-promise": "^3.0.2",
@@ -75,7 +75,7 @@ After adding these our `package.json` will look like this.  It’s getting lengt
 
 <br>
 
-```javascript
+```typescript
 {
   "version": "1.0.0",
   "name": "ASP.NET",
