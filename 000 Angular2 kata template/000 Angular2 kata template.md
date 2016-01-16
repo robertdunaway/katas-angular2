@@ -18,7 +18,7 @@ tags:
 ###http://robertdunaway.github.io
 
 ##[Angular2 code kata list](http://mycodekatas.github.io/angular2.html)
-##[All code kata lists](http://mycodekatas.github.io/)
+##[All code katas lists](http://mycodekatas.github.io/)
 
  <img src="https://raw.githubusercontent.com/robertdunaway/katas-angular2/master/katas-Angular2-logo.png" alt="Smiley face" height="200" width="200"> 
 
@@ -52,7 +52,7 @@ Create a for loop using an incremental index.
 
 
 
-```
+```typescript
 
    for (var index: number = 0; index < 10; index++) {
    	    console.log(index);
