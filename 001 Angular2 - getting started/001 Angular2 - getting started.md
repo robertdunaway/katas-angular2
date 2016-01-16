@@ -75,7 +75,7 @@ After adding these our `package.json` will look like this.  It’s getting lengt
 
 <br>
 
-```
+```javascript
 {
   "version": "1.0.0",
   "name": "ASP.NET",
@@ -118,7 +118,7 @@ We added the following to our Gulp file so the libraries can be copied to `wwwro
 
 <br>
 
-```
+```javascript
 // for angular2
  , 'node_modules/**//es6-shim/es6-shim.min.js'
  , 'node_modules/**//angular2/bundles/angular2-polyfills.min.js'
