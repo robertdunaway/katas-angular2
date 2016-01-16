@@ -185,7 +185,7 @@ If you open the `app.ts` file, you’ll find the following.
 
 <br>
 
-```html
+```typescript
 import { bootstrap } from 'angular2/platform/browser';
 import { Component } from 'angular2/core';
 
@@ -210,7 +210,7 @@ We’ve added our JavaScript libraries but one important file we did not add was
 
 <br>
 
-```
+```HTML
 <script>
     System.config({
         packages: {
