@@ -239,7 +239,7 @@ To support the TypeScript transpilation we have a tsconfig.json file.
 <br>
 To support the automatic update of the Definitely Typed system we created a gulp_tsd.json file.  The gulpfile.js file has a task that uses this configuration file.  This task, “tsd”, is bound to “Project Open” in Visual Studio.
 <br>
-```
+```json
 {
   "command": "reinstall",
   "latest": true,
