@@ -259,7 +259,7 @@ To support the automatic update of the Definitely Typed system we created a gulp
 NOTE: This provides Visual Studio what it needs to provide intellisense.  
 <br>
 Examples of commands to retrieve Definitely Typed definitions.
-```command
+```
 tsd query angular2 --action install –save
 tsd query systemjs --action install --save
 
