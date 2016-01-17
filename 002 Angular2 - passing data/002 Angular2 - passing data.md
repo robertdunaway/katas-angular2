@@ -54,17 +54,20 @@ Add multiple properties (FName, LName, Age) to the HelloWorld class and set thei
 Your class might look something like this.
 <br>
 ```TypeScript
+
 class HelloWorld {
     FName: string = 'John';
     LName: string = 'Doe';
     Age: number = 25;
 }
 
+
 ```
 <br>
 Your template might look something like this.
 <br>
 ```TypeScript
+
 @Component({
     selector: 'hello-world',
     template: `
@@ -73,6 +76,7 @@ Your template might look something like this.
     </div>
 `
 })
+
 
 ```
 <br>
