@@ -1,0 +1,14 @@
+﻿{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "files": [
+    "./typings/angular2/angular2.d.ts",
+    "./src/app.ts",
+    "./src/app/boot.ts",
+    "./src/app/app.component.ts"
+  ]
+}
