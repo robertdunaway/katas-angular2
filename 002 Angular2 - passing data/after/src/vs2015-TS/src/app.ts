@@ -5,12 +5,16 @@ import { Component } from 'angular2/core';
     selector: 'hello-world',
     template: `
     <div>
-        Hello World
+        Hello {{FName}} {{LName}} age {{Age}}
     </div>
 `
 })
 
-class HelloWorld { }
+class HelloWorld {
+    FName: string = 'John';
+    LName: string = 'Doe';
+    Age: number = 25;
+}
 
 bootstrap(HelloWorld);
 
