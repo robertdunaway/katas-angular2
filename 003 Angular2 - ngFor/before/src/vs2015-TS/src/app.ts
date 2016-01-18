@@ -10,7 +10,24 @@ import { Component } from 'angular2/core';
 `
 })
 
-class HelloWorld { }
+class HelloWorld {
+    persons: Person[] = [];
+
+    constructor() {
+
+        this.persons.push({ FirstName: 'John', LastName: 'Doe', Email: 'john.doe@email.com' }
+            , { FirstName: 'Jane', LastName: 'Doe', Email: 'jane.doe@email.com' }
+            , { FirstName: 'Another', LastName: 'Doe', Email: 'another.doe@email.com' });
+    }
+
+}
+
+class Person {
+    FirstName: string;
+    LastName: string;
+    Email: string;
+}
 
 bootstrap(HelloWorld);
+
 
