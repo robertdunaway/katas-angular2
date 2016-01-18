@@ -25,9 +25,3 @@ class HelloWorld {
 }
 
 bootstrap(HelloWorld);
-
-//class Person {
-//    FirstName: string;
-//    LastName: string;
-//    Email: string;
-//}
