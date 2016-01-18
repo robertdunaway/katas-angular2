@@ -72,6 +72,8 @@ Your components template might end up looking something like this.
 
 ```
 <br>
+ <img src="https://raw.githubusercontent.com/robertdunaway/katas-angular2/master/003%20Angular2%20-%20ngFor/1.png"> 
+<br>
 You might want to experiment with ngFor.  Possibly create a dropdown control with the ngFor directive.
 
 
