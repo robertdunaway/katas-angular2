@@ -55,9 +55,7 @@ In a previous kata we iterated over a collection based on the Person class.
 For this kata, move the Person class into its own file, “`person.class.ts`”, export it, then import it back into the `app.ts` file.  The interface will be the same so you will not need to change the template.
 <br>
 Go ahead and give it a shot.  If you get stuck, just read on.
-
 <br>
-
 To export the class we supply the key word, “`export`”, in front of the class name.
 <br>
 ```TypeScript
