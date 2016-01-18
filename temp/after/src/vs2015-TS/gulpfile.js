@@ -101,6 +101,7 @@ gulp.task('libs', function () {
                     , 'node_modules/**//rxjs/bundles/rx.min.js'
                     , 'node_modules/**//angular2/bundles/angular2.min.js'
                     , 'node_modules/**//angular2/bundles/angular2.dev.js'
+                    , 'node_modules/**//angular2/bundles/upgrade.min.js'
                     
     ])
       .pipe(plumber({
