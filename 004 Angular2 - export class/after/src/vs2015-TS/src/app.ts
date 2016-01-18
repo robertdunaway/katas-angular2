@@ -16,7 +16,7 @@ class HelloWorld {
 
     constructor() {
 
-        this.persons.push({ FirstName: 'John', LastName: 'Doe', Email: 'john.doe@email.com' )}
+        this.persons.push({ FirstName: 'John', LastName: 'Doe', Email: 'john.doe@email.com' }
             , { FirstName: 'Jane', LastName: 'Doe', Email: 'jane.doe@email.com' }
             , { FirstName: 'Another', LastName: 'Doe', Email: 'another.doe@email.com' });
 
