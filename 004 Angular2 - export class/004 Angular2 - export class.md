@@ -63,7 +63,9 @@ To export the class we supply the key word, “`export`”, in front of the clas
 <br>
 
 ```TypeScript
+
 export class Person {
+
 
 ```
 <br>
@@ -72,7 +74,9 @@ To import the file, add the following line at the top of the `app.ts` file.
 <br>
 
 ```
+
 import `{ Person }` from `'./person.class'`;
+
 
 ```
 <br>
