@@ -73,7 +73,7 @@ export class Person {
 To import the file, add the following line at the top of the `app.ts` file.
 <br>
 
-```
+```typescript
 
 import `{ Person }` from `'./person.class'`;
 
