@@ -73,7 +73,7 @@ After adding these our `package.json` will look like this.  It’s getting lengt
 
 <br>
 
-```javascript
+```typescript
 {
   "version": "1.0.0",
   "name": "ASP.NET",
