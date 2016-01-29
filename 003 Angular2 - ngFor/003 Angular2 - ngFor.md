@@ -60,7 +60,8 @@ Us a `ngFor` to display a list of persons.  This is similar to and the replaceme
 <br>
 Your components template might end up looking something like this.
 <br>
-```
+```typescript
+
 @Component({
     selector: 'hello-world',
     template: `
@@ -69,6 +70,7 @@ Your components template might end up looking something like this.
     </div>
 `
 })
+
 
 ```
 <br>
