@@ -56,7 +56,7 @@ We added the following libraries to the package.json file.  These are recommende
 
 <br>
 
-```typescript
+```javascript
     "angular2": "2.0.0-beta.0",
     "systemjs": "0.19.6",
     "es6-promise": "^3.0.2",
