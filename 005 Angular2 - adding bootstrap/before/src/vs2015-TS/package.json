@@ -5,11 +5,11 @@
   "devDependencies": {
     "angular2": "latest",
     "es6-promise": "latest",
-    "es6-shim": "latest",
+    "es6-shim": "^0.33.3",
     "gulp": "latest",
-    "gulp-clean": "latest",
+    "gulp-rimraf": "latest",
     "gulp-livereload": "latest",
-    "gulp-minify-html": "latest",
+    "gulp-htmlmin": "latest",
     "gulp-newer": "latest",
     "gulp-plumber": "latest",
     "gulp-rename": "latest",
@@ -21,11 +21,11 @@
     "gulp-uglify": "latest",
     "gulp-watch": "latest",
     "merge": "latest",
-    "reflect-metadata": "latest",
+    "reflect-metadata": "0.1.2",
     "reporters": "latest",
     "run-sequence": "latest",
-    "rxjs": "latest",
+    "rxjs": "5.0.0-beta.0",
     "systemjs": "latest",
-    "zone.js": "latest"
+    "zone.js": "0.5.11"
   }
 }
