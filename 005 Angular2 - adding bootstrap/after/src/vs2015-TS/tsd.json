@@ -6,13 +6,13 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "jquery/jquery.d.ts": {
-      "commit": "86dbea8fc37d9473fee465da4f0a21bea4f8cbd9"
+      "commit": "c393f8974d44840a6c9cc6d5b5c0188a8f05143d"
     },
     "angular2/angular2.d.ts": {
       "commit": "86dbea8fc37d9473fee465da4f0a21bea4f8cbd9"
     },
     "systemjs/systemjs.d.ts": {
-      "commit": "86dbea8fc37d9473fee465da4f0a21bea4f8cbd9"
+      "commit": "c393f8974d44840a6c9cc6d5b5c0188a8f05143d"
     }
   }
 }
