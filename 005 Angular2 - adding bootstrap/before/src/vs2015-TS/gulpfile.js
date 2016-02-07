@@ -10,7 +10,6 @@ var gulp = require('gulp')
     , plumber = require('gulp-plumber')
     , clean = require('gulp-clean')
     , newer = require('gulp-newer')
-    , minifyhtml = require('gulp-minify-html')
     , ts = require('gulp-typescript')
     , tslint = require('gulp-tslint')
     , tsstylish = require('gulp-tslint-stylish')
@@ -40,19 +39,6 @@ gulp.task('copy-to-wwwroot', function () {
     .pipe(gulp.dest('wwwroot'));
 });
 
-gulp.task('minifyhtml', function () {
-    return gulp.src(['wwwroot/**/*.html', '!/**/*.min.html', '!wwwroot/lib/**/*'])
-      .pipe(plumber({
-          errorHandler: onError
-      }))
-     .pipe(sourcemaps.init())
-     .pipe(minifyhtml())
-     .pipe(rename({
-         extname: '.min.html'
-     }))
-     .pipe(sourcemaps.write('./'))
-     .pipe(gulp.dest('wwwroot/./'));
-});
 
 gulp.task('tscompile', function () {
     return gulp.src(['./wwwroot/**/*.ts', '!wwwroot/lib/**/*.*', '!wwwroot/css/**/*.*'])
@@ -123,7 +109,7 @@ gulp.task('reload', function () {
 // ----------------------------------------------------------------
 gulp.task('default', function () {
     runSequence('clean-wwwroot', 'copy-to-wwwroot', 'libs',
-                ['minifyhtml', 'tscompile', 'tslint']
+                ['tscompile', 'tslint']
                 , 'watch'
                 );
 });
@@ -148,11 +134,5 @@ gulp.task('watch', function () {
     // Watch - Execute linters
     // ---------------------------------------------------------------
     gulp.watch(['wwwroot/**/*.ts', '!wwwroot/lib/**/*.*', '!wwwroot/css/**/*.*'], function () { runSequence('tslint'); });
-
-    // ---------------------------------------------------------------
-    // Watching HTML files
-    // ---------------------------------------------------------------
-    gulp.watch(['wwwroot/**/*.html', '!wwwroot/**/*.min.html', '!wwwroot/lib/**/*'], function () { runSequence('minifyhtml', 'reload'); });
-
 
 });
