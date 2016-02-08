@@ -112,10 +112,13 @@ The top is before and the bottom is after.
 <br>
  <img src="https://raw.githubusercontent.com/robertdunaway/katas-angular2/master/005%20Angular2%20-%20adding%20bootstrap/1.png"> 
 <br>
+
 Let’s go ahead and add a couple controls to make sure things work.
 <br>
+
 Add a calendar control
 <br>
+
 This requires moment.js so we’ll need to add this npm package.
 <br>
 ```
