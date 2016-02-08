@@ -69,8 +69,10 @@ http://v4-alpha.getbootstrap.com/
 #### ng2-bootstrap
 For the JavaScript portion of bootstrap we are using the valor-software.com implementation of bootstrap for Angular 2.  There are other implementations and in fact you can use bootstraps JavaScript implementation of bootstrap.  
 <br>
+
 The reason some will prefer an Angular 2 implementation is because they might prefer declarative programming with Angular directives as opposed to imperative programming in the jQuery style.  As far as I know this is personal preference but the “right” way to do it is the Angular way… So I’m told.
 <br>
+
 http://valor-software.com/ng2-bootstrap/index-bs4.html
 <br>
 
