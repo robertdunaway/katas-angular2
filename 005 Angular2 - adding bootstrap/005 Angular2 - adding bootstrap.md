@@ -97,6 +97,7 @@ Add the required files to out gulp task, libs, to copy to wwwroot.
 Add references to the index.html file.
 <br>
 ```
+
 <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 <script src="../lib/ng2-bootstrap/bundles/ng2-bootstrap.min.js"></script>
 
