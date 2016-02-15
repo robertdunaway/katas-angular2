@@ -1,4 +1,6 @@
-﻿/// <reference path="../typings/browser/definitions/moment/moment.d.ts" />
+﻿
+/// <reference path="../typings/moment/moment.d.ts" />
+
 
 import { bootstrap } from 'angular2/platform/browser';
 import {BUTTON_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
