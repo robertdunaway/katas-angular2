@@ -6,19 +6,19 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "jquery/jquery.d.ts": {
-      "commit": "bda9391b4987bbf91a713ccaf586c108106ced1f"
+      "commit": "85af69c91599a6c904618545f0613970e1ff3f64"
     },
     "angular2/angular2.d.ts": {
       "commit": "86dbea8fc37d9473fee465da4f0a21bea4f8cbd9"
     },
     "systemjs/systemjs.d.ts": {
-      "commit": "bda9391b4987bbf91a713ccaf586c108106ced1f"
+      "commit": "85af69c91599a6c904618545f0613970e1ff3f64"
     },
     "moment/moment.d.ts": {
-      "commit": "bda9391b4987bbf91a713ccaf586c108106ced1f"
+      "commit": "85af69c91599a6c904618545f0613970e1ff3f64"
     },
     "moment/moment-node.d.ts": {
-      "commit": "bda9391b4987bbf91a713ccaf586c108106ced1f"
+      "commit": "85af69c91599a6c904618545f0613970e1ff3f64"
     }
   }
 }
